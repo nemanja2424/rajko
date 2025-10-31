@@ -1,141 +1,179 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
-
-  --text-primary: #000;
-  --text-secondary: #666;
-
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
+.hero{
   display: flex;
-  min-height: 100vh;
   align-items: center;
   justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
+  width: calc(100% - 100px);
+  max-width: 100%;
+  height: 100vh;
+  max-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+  top: 0;
+  /*background: url('/Images/hero.webp') no-repeat center center;*/
+  background-size: cover;
+  padding: 0 50px;
+  color: whitesmoke;
 }
-
-.main {
+.heroOverlay {
   display: flex;
-  min-height: 100vh;
-  width: 100%;
-  max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+  background-color: rgba(0, 0, 0, 0.685);
+  position: absolute;
+}
+.hero video{
+  position: absolute;
+  z-index: -2;
+}
+.hero h1 {
+  text-align: center;
+  font-size: 70px;
+  margin: 0;
+  line-height: 1.2;
+}
+.hero p{
+  font-size: 22px;
+  margin: 20px;
+}
+.gold {
+  background: linear-gradient(90deg, #FFD700, #FFA500, #FFE066);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 
+    0 0 12px rgba(255, 215, 0, 0.3),
+    0 0 18px rgba(255, 165, 0, 0.2),
+    0 0 24px rgba(255, 224, 102, 0.1);
 }
 
-.intro {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 24px;
-}
-
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
-}
-
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
-}
-
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.ctas {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
+.hero a {
+  margin-top: 20px;
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  background: none;
+  border: none;
   cursor: pointer;
-  width: fit-content;
-  font-weight: 500;
+  line-height: 1.6;
+  padding: 20px 50px;      /* veće dugme */
+  letter-spacing: 0.06rem;
+  color: #58afd1;
+  box-shadow: inset 0 0 0 3px #2e2e2e;  /* deblji "inset" border */
+  border-radius: 18px;     /* veći radius */
+  font-size: 26px;         /* veći font */
+  font-weight: 600;
+  transition: color 0.25s 0.0833s, transform 0.3s ease-out, box-shadow 0.3s ease;
+  overflow: hidden;
+  
+  /* Zlatni gradient odmah na slovima */
+  background: linear-gradient(90deg, #FFD700, #FFA500, #FFE066);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.9);
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.hero a::before,
+.hero a::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  border-radius: 18px;   /* proporcionalno povećano */
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.hero a::before {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 3px; 
+  border-left-width: 3px;   
+  border-color: transparent;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
-
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
-  }
+.hero a::after {
+  bottom: 0;
+  right: 0;
+  border-top-width: 3px;    
+  border-right-width: 3px;  
+  border-color: transparent;
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
-
-  .intro {
-    gap: 16px;
-  }
-
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
-  }
+.hero a:hover {
+  transform: scale(0.95);
+  background: linear-gradient(90deg, #FFD700, #FFA500, #FFE066);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  box-shadow:
+    0 0 18px rgba(255, 215, 0, 0.5),
+    0 0 24px rgba(255, 165, 0, 0.4),
+    0 0 30px rgba(255, 224, 102, 0.3);
+  text-shadow:
+    0 0 12px rgba(255, 215, 0, 0.4),
+    0 0 20px rgba(255, 165, 0, 0.3),
+    0 0 28px rgba(255, 224, 102, 0.2);
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+.hero a:hover::before,
+.hero a:hover::after {
+  width: 100%;
+  height: 100%;
+  border-color: #FFD700;
+  transition: border-color 0s, width 0.3s, height 0.3s;
+}
+
+.hero a:hover::before {
+  transition-delay: 0s, 0s, 0.25s;
+}
+
+.hero a:hover::after {
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scrollIcon {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 21px;
+  height: 35px;
+  border: 2px solid whitesmoke;
+  border-radius: 30px;
+  z-index: 10;
+  animation: scrollIconFloat 2s ease-in-out infinite;
+}
+.scrollIcon div{
+  width: 3px;
+  height: 10px;
+  background: whitesmoke;
+  transform: translate(-50%, -50%);
+  top: 40%;
+  left: 50%;
+  position: absolute;
+}
+@keyframes scrollIconFloat {
+  0% {
+    transform: translateX(-50%) translateY(0);
   }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
   }
 }
