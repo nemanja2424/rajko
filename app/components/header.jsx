@@ -15,7 +15,7 @@ export default function Header() {
   return (
     <header className={`${styles.header} ${navOpen ? styles.open : ''}`}>
       <div className={styles.topRow}>
-        <a href={"/"}><Image src="/assetss/nemanja logo.png" alt="logo" width={85} height={70} /></a>
+        <a href={"/"}><Image src="/assetss/nemanja logo.png" alt="logo" width={85} height={70} className={styles.logo} /></a>
         <nav className={styles.nav}>
           <a href="">Services</a>
           <a href="">Vehicles</a>

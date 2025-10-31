@@ -29,6 +29,16 @@ export default function Home() {
         <div className={styles.scrollIcon}><div></div></div>
       </div>
 
+      <div className={styles.whyUs}>
+        <h1>
+          Why Choose Us?
+        </h1>
+        <p>
+          As a proud family-owned company, we’ve built our reputation on warmth, reliability, and an unwavering commitment to providing a truly personal luxury travel experience.
+        </p>
+
+      </div>
+
 
     </div>
   );
