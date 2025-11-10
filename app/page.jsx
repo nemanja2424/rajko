@@ -1,9 +1,16 @@
+'use client'
 import Header from "./components/header";
 import styles from "./page.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faUser } from "@fortawesome/free-regular-svg-icons";
 import { faUser, faCarSide, faBoltLightning } from "@fortawesome/free-solid-svg-icons";
 import UserIcon from "./components/icons/user";
+import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination, EffectFade } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/effect-fade";
 
 export default function Home() {
   return (
@@ -82,7 +89,16 @@ export default function Home() {
 
       <div className={`${styles.whyUs} ${styles.area}`}>
         <h1>Your Journey Across the Tri-State Area Begins Here</h1>
-        <p>From the heart of New York City to the farthest corners of the Tri-State area and beyond, Transporter Chauffeurs LLC provides luxury chauffeur services across New York, New Jersey, and Connecticut. Covering all major metropolitan airports and surrounding regions, our professional chauffeurs ensure every journey is seamless, comfortable, and reliable — whether for business, leisure, or special events.</p>
+        <div className={styles.slikaTekst}>
+          <p>From the heart of New York City to the farthest corners of the Tri-State area and beyond, Transporter Chauffeurs LLC provides luxury chauffeur services across New York, New Jersey, and Connecticut. Covering all major metropolitan airports and surrounding regions, our professional chauffeurs ensure every journey is seamless, comfortable, and reliable — whether for business, leisure, or special events.</p>
+          <Image
+            src="/assetss/mapa.jpg"
+            alt="Map showing the Tri-State area"
+            width={900}
+            height={500}
+            className={styles.mapImage}
+          />  
+        </div>
         {/* Ide slika kada daka skine. 2 KOMBINACIJE: naslov iznad svega, naslov samo iznad teksta */}
       </div>
 
@@ -109,6 +125,46 @@ export default function Home() {
           Perfectly maintained and equipped with premium amenities, it offers the ideal blend of comfort, style, and safety.
           Whether it’s an airport transfer, a corporate event, or a night out in the city, our Escalade ensures your journey is as memorable as your destination.
         </p>
+
+         <div className={styles.sliderContainer}>
+          <Swiper
+            modules={[Autoplay, Pagination, EffectFade]}
+            spaceBetween={30}
+            effect="fade"
+            pagination={{ clickable: true }}
+            autoplay={{ delay: 3500, disableOnInteraction: false }}
+            loop={true}
+            className={styles.swiper}
+          >
+            <SwiperSlide>
+              <Image
+                src="/assetss/escalade.png"
+                alt="Cadillac Escalade front view"
+                width={1200}
+                height={600}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Image
+                src="/assetss/escalade2.png"
+                alt="Cadillac Escalade interior"
+                width={1200}
+                height={600}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Image
+                src="/assetss/escalade3.png"
+                alt="Cadillac Escalade side view"
+                width={1200}
+                height={600}
+                className={styles.slideImage}
+              />
+            </SwiperSlide>
+          </Swiper>
+        </div>
       </div>
 
     </div>
