@@ -7,7 +7,7 @@ import UserIcon from "./components/icons/user";
 
 export default function Home() {
   return (
-    <div>
+    <div className={styles.body}>
       <Header />
 
       <div className={styles.hero}>
@@ -50,10 +50,10 @@ export default function Home() {
             <div className={styles.okvirIkone}>
               <FontAwesomeIcon
                 icon={faUser}
-                className={styles.goldIcon}
+                className={`${styles.goldIcon} ${styles.faGradient}`}
               />
             </div>
-            <h3>Experienced Chauffeurs</h3>
+            <h3 className={styles.gold2}>Experienced Chauffeurs</h3>
             <p>Our professional drivers combine years of experience with genuine care, ensuring every journey is safe, smooth, and enjoyable.</p>
           </div>
           <div className={styles.kartica}>
@@ -63,7 +63,7 @@ export default function Home() {
                 className={styles.goldIcon}
               />
             </div>
-            <h3>Premium Fleet</h3>
+            <h3 className={styles.gold2}>Premium Fleet</h3>
             <p>Our vehicles are carefully maintained and equipped with modern amenities — blending comfort, elegance, and performance.</p>
           </div>
           <div className={styles.kartica}>
@@ -73,11 +73,42 @@ export default function Home() {
                 className={styles.goldIcon}
               />
             </div>
-            <h3>Seamless Experience</h3>
+            <h3 className={styles.gold2}>Seamless Experience</h3>
             <p>From booking to drop-off, we handle every detail with precision and care — so you can simply relax and enjoy the ride.</p>
           </div>
         </div>
 
+      </div>
+
+      <div className={`${styles.whyUs} ${styles.area}`}>
+        <h1>Your Journey Across the Tri-State Area Begins Here</h1>
+        <p>From the heart of New York City to the farthest corners of the Tri-State area and beyond, Transporter Chauffeurs LLC provides luxury chauffeur services across New York, New Jersey, and Connecticut. Covering all major metropolitan airports and surrounding regions, our professional chauffeurs ensure every journey is seamless, comfortable, and reliable — whether for business, leisure, or special events.</p>
+        {/* Ide slika kada daka skine. 2 KOMBINACIJE: naslov iznad svega, naslov samo iznad teksta */}
+      </div>
+
+      <div className={styles.kartice2}>
+        <div className={`${styles.kartica} ${styles.kartica2}`}>
+          <h1>100%</h1>
+          <p>Luxury Experience</p>
+        </div>
+
+        <div className={`${styles.kartica} ${styles.kartica2}`}>
+          <h1>24/7</h1>
+          <p>Service Available</p>
+        </div>
+
+        <div className={`${styles.kartica} ${styles.kartica2}`}>
+          <h1>99%</h1>
+          <p>Customer Satisfaction</p>
+        </div>
+      </div>
+
+      <div className={styles.whyUs}>
+        <h1>Our Signature Vehicle</h1>
+        <p>Step into sophistication with our Cadillac Escalade — where luxury meets power.
+          Perfectly maintained and equipped with premium amenities, it offers the ideal blend of comfort, style, and safety.
+          Whether it’s an airport transfer, a corporate event, or a night out in the city, our Escalade ensures your journey is as memorable as your destination.
+        </p>
       </div>
 
     </div>
