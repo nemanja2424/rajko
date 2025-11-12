@@ -9,6 +9,9 @@ export default function Header() {
   const toggleNav = () => {
     setNavOpen(!navOpen);
   };
+  const closeNav = () => {
+    setNavOpen(false)
+  }
 
 
 
@@ -17,11 +20,8 @@ export default function Header() {
       <div className={styles.topRow}>
         <a href={"/"}><Image src="/assetss/nemanja logo.png" alt="logo" width={85} height={70} className={styles.logo} /></a>
         <nav className={styles.nav}>
-          <a href="">Services</a>
-          <a href="">Vehicles</a>
-          <a href="">About</a>
-          <a href="">Reviews</a>
-          <a href="">Contact</a>
+          <a href="#whyUs">About</a>
+          <a href="#contact">Contact</a>
           
         </nav>
         <a href='#contact' className={`${styles.button1} ${styles.forPC}`}>Book now</a>
@@ -34,6 +34,11 @@ export default function Header() {
           <span></span>
           <span></span>
         </div>
+      </div>
+      <div className={`${styles.phoneNav} ${navOpen ? styles.open : ''}`}>
+        <a href="#whyUs" onClick={closeNav}>About</a>
+        <a href="#contact" onClick={closeNav}>Contact</a>
+        <a href='#contact' className={`${styles.button1}`} onClick={closeNav}>Book now</a>
       </div>
     </header>
   );
