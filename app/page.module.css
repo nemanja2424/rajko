@@ -26,6 +26,7 @@
 .hero video{
   position: absolute;
   z-index: -2;
+  width: 100%;
 }
 .hero h1 {
   text-align: center;
@@ -204,6 +205,27 @@
   }
 }
 
+
+.mapImage {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px; /* po želji */
+  object-fit: cover;
+
+  /* Glavni efekat blendovanja ivica */
+  -webkit-mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+  mask-image: radial-gradient(circle at center, black 60%, transparent 100%);
+
+  /* Za bolje blendovanje s tamnom pozadinom */
+  mix-blend-mode: lighten; /* možeš promeniti u 'screen' ili 'soft-light' */
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.mapImage:hover {
+  opacity: 1;
+}
 
 
 .whyUs{
@@ -407,4 +429,155 @@
   opacity: 1;
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.45);
   transform: scale(1.2);
+}
+
+
+.kontaktWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  gap: 30px;
+  padding: 0 12%;
+  margin-top: 80px;
+}
+.kontaktWrapper div{
+}
+
+.kontaktWrapper h1 {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.cKartica{
+  height: auto;
+  padding: 40px;
+  padding-bottom: 20px;
+  width: 45%;
+  background: rgba(255, 215, 0, 0.05);
+}
+
+.cInfo{
+  width: 45%;
+}
+.cInfo h1{
+  color: whitesmoke;
+  background: linear-gradient(90deg, #FFD700, #FFA500, #FFE066);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 15px;
+}
+.cInfo p{
+  font-size: 20px;
+  font-weight: 300;
+}
+
+.itemsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 40px;
+  width: 100%;
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  background: rgba(255, 215, 0, 0.05);
+  border: 2px solid rgba(255, 215, 0, 0.2);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.item:hover {
+  background: rgba(255, 215, 0, 0.1);
+  border-color: rgba(255, 215, 0, 0.5);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+  transform: translateX(10px);
+}
+
+.itemIcon {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  border: 2px solid rgba(255, 215, 0, 0.4);
+  color: #FFD700;
+  font-size: 24px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+}
+
+.item:hover .itemIcon {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: #FFD700;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.3);
+  transform: scale(1.1);
+}
+
+.itemContent {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.itemContent h4 {
+  margin: 0;
+  color: whitesmoke;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+}
+
+.itemContent p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.itemContent a {
+  color: #FFD700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.itemContent a:hover {
+  color: #FFA500;
+  text-decoration: underline;
+}
+
+@media (max-width: 750px) {
+  .kontaktWrapper {
+    flex-direction: column;
+    padding: 5%;
+    gap: 40px;
+  }
+
+  .kontaktWrapper div {
+    width: 100%;
+  }
+
+  .kontaktWrapper h1 {
+    font-size: 35px;
+  }
+
+  .cKartica {
+    padding: 25px;
+  }
+
+  .item {
+    padding: 15px;
+  }
+
+  .itemIcon {
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
 }

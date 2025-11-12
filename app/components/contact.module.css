@@ -1,0 +1,178 @@
+.form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form h3 {
+    color: whitesmoke;
+    font-size: 32px;
+    margin: 0;
+    background: linear-gradient(90deg, #FFD700, #FFA500, #FFE066);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.form label {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    color: whitesmoke;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+}
+
+.form input,
+.form textarea {
+    cursor: text;
+    outline: none;
+    width: 90%;
+    padding: 12px 15px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 8px;
+    color: whitesmoke;
+    font-family: inherit;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.form input:focus,
+.form textarea:focus {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #FFD700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+}
+
+.form textarea {
+    resize: vertical;
+    min-height: 120px;
+    max-height: 250px;
+}
+
+.form button {
+    padding: 15px 40px;
+    background: linear-gradient(90deg, #FFD700, #FFA500, #FFE066);
+    color: #1a1a1a;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+    letter-spacing: 0.05rem;
+}
+
+.button1 {
+  width: fit-content;           /* zauzima samo potrebnu širinu */
+  margin-left: auto;            /* pomera na desno */
+  margin-right: auto;           /* centra */
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  padding: 10px 20px;
+  letter-spacing: 0.05rem;
+  color: #58afd1;
+  box-shadow: inset 0 0 0 2px #2e2e2e;
+  border-radius: 12px;
+  transition: color 0.25s 0.0833s, transform 2s ease-out, box-shadow 1s ease ;
+  overflow: hidden;
+  font-size: 18px;
+}
+
+.button1::before,
+.button1::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 0 solid transparent;
+  box-sizing: border-box;
+  border-radius: 12px;
+}
+
+.button1::before {
+  bottom: 0;
+  right: 0;
+  border-bottom-width: 2px; 
+  border-left-width: 2px;   
+  border-color: transparent;
+}
+
+.button1::after {
+  bottom: 0;
+  right: 0;
+  border-top-width: 2px;    
+  border-right-width: 2px;  
+  border-color: transparent;
+}
+
+.button1:hover {
+  color: transparent;
+  transform: scale(0.95);
+  background: linear-gradient(90deg, #FFD700, #FFA500, #FFE066);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  box-shadow: 
+    0 0 12px rgba(255, 215, 0, 0.5),
+    0 0 18px rgba(255, 165, 0, 0.4),
+    0 0 24px rgba(255, 224, 102, 0.3);
+
+  text-shadow: 
+    0 0 8px rgba(255, 215, 0, 0.4),
+    0 0 14px rgba(255, 165, 0, 0.3),
+    0 0 20px rgba(255, 224, 102, 0.2);
+}
+
+.button1:hover::before,
+.button1:hover::after {
+  width: 100%;
+  height: 100%;
+  border-color: #FFD700;
+  transition: border-color 0s, width 0.3s, height 0.3s;
+}
+
+.button1:hover::before {
+  transition-delay: 0s, 0s, 0.25s;
+}
+
+.button1:hover::after {
+  transition-delay: 0s, 0.25s, 0s;
+}
+
+@media (max-width: 750px) {
+    .form {
+        padding: 25px;
+        gap: 20px;
+    }
+
+    .form h3 {
+        font-size: 24px;
+    }
+
+    .form textarea {
+        min-height: 100px;
+    }
+}
+
+
+
+
+.form a{
+    color: white;
+    text-decoration: none;
+}

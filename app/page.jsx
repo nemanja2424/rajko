@@ -3,7 +3,7 @@ import Header from "./components/header";
 import styles from "./page.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faUser } from "@fortawesome/free-regular-svg-icons";
-import { faUser, faCarSide, faBoltLightning } from "@fortawesome/free-solid-svg-icons";
+import { faUser, faCarSide, faBoltLightning, faPhone, faEnvelope, faMapLocationDot } from "@fortawesome/free-solid-svg-icons";
 import UserIcon from "./components/icons/user";
 import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -11,6 +11,7 @@ import { Autoplay, Pagination, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/effect-fade";
+import Contact from "./components/contact";
 
 export default function Home() {
   return (
@@ -92,7 +93,7 @@ export default function Home() {
         <div className={styles.slikaTekst}>
           <p>From the heart of New York City to the farthest corners of the Tri-State area and beyond, Transporter Chauffeurs LLC provides luxury chauffeur services across New York, New Jersey, and Connecticut. Covering all major metropolitan airports and surrounding regions, our professional chauffeurs ensure every journey is seamless, comfortable, and reliable — whether for business, leisure, or special events.</p>
           <Image
-            src="/assetss/mapa.jpg"
+            src="/assetss/ocisceno.png"
             alt="Map showing the Tri-State area"
             width={900}
             height={500}
@@ -164,6 +165,49 @@ export default function Home() {
               />
             </SwiperSlide>
           </Swiper>
+        </div>
+      </div>
+
+      <div className={styles.kontaktWrapper}>
+        <div className={styles.cInfo}>
+          <h1>Get in Touch</h1>
+          <p>Ready to experience luxury travel? Contact our team for personalized service and instant bookings.</p>
+          
+          <div className={styles.itemsContainer}>
+            <div className={styles.item}>
+              <div className={styles.itemIcon}>
+                <FontAwesomeIcon icon={faPhone} />
+              </div>
+              <div className={styles.itemContent}>
+                <h4>Call Us</h4>
+                <p><a href="tel:+19175727259">+1 (917) 572-7259</a></p>
+              </div>
+            </div>
+
+            <div className={styles.item}>
+              <div className={styles.itemIcon}>
+                <FontAwesomeIcon icon={faEnvelope} />
+              </div>
+              <div className={styles.itemContent}>
+                <h4>Email Us</h4>
+                <p><a href="mailto:info.transporterllc@gmail.com">info.transporterllc@gmail.com</a></p>
+              </div>
+            </div>
+
+            <div className={styles.item}>
+              <div className={styles.itemIcon}>
+                <FontAwesomeIcon icon={faMapLocationDot} />
+              </div>
+              <div className={styles.itemContent}>
+                <h4>Visit Us</h4>
+                <p>130 Lenox Ave, Suite 705<br />New York, NY 10026</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className={`${styles.kartica} ${styles.cKartica}`}>
+          <Contact />
         </div>
       </div>
 
