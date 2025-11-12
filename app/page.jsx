@@ -169,7 +169,7 @@ export default function Home() {
       </div>
 
       <div className={styles.kontaktWrapper}>
-        <div className={styles.cInfo}>
+        <div className={styles.cInfo} id="contact">
           <h1>Get in Touch</h1>
           <p>Ready to experience luxury travel? Contact our team for personalized service and instant bookings.</p>
           
@@ -211,6 +211,9 @@ export default function Home() {
         </div>
       </div>
 
+      <footer className={styles.footer}>
+        <p>Powered by Transporter Chauffeurs LLC © {new Date().getFullYear()}</p>
+      </footer>
     </div>
   );
 }

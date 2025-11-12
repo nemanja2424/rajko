@@ -24,7 +24,7 @@ export default function Header() {
           <a href="">Contact</a>
           
         </nav>
-        <a href='#footer' className={`${styles.button1} ${styles.forPC}`}>Book now</a>
+        <a href='#contact' className={`${styles.button1} ${styles.forPC}`}>Book now</a>
         <div
           className={`${styles.navIcon3} ${styles.forPh} ${navOpen ? styles.open : ''}`}
           onClick={toggleNav}

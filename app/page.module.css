@@ -553,14 +553,18 @@
 }
 
 @media (max-width: 750px) {
+  .cInfo p{
+    font-size: 15px;
+  }
   .kontaktWrapper {
     flex-direction: column;
-    padding: 5%;
-    gap: 40px;
+    padding: 10px;
+    overflow-x: hidden;
   }
 
   .kontaktWrapper div {
-    width: 100%;
+    width: calc(100% - 20px);
+    padding: 10;
   }
 
   .kontaktWrapper h1 {
@@ -576,8 +580,10 @@
   }
 
   .itemIcon {
-    width: 45px;
+    width: 45px !important;
     height: 45px;
     font-size: 20px;
   }
 }
+
+
